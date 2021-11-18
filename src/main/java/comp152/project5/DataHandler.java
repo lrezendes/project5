@@ -36,15 +36,23 @@ public class DataHandler {
         }
         var responseBody = response.body();
         var jsonInterpreter = new Gson();
-        var MakeupData= jsonInterpreter.fromJson(responseBody, MakeupDataType[].class);
-        return universityData;
+        var makeupData= jsonInterpreter.fromJson(responseBody, MakeupDataType[].class);
+        return makeupData;
     }
 
     class MakeupDataType{
         String alpha_two_code;
         ArrayList<String> web_pages;
-        String name;
-        String country;
+        String product_type;
+        String product_category;
+        String ("Canadian", "CertClean", "Chemical Free", "Dairy Free",
+                        "EWG Verified", "EcoCert", "Fair Trade", "Gluten Free",
+                        "Hypoallergenic", "Natural", "No Talc", "Non-GMO", "Organic",
+                        "Peanut Free Product", "Sugar Free", "USDA Organic", "Vegan",
+                        "alcohol free", "cruelty free", "oil free", "purpicks",
+                        "silicone free", "water free") product_tags;
+        String brand;
+
         ArrayList<String> domains;
 
         @Override
