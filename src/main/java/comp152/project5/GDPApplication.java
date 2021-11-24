@@ -13,6 +13,6 @@ package comp152.project5;
 // 'GDPApplication' Class:
 public class GDPApplication {
 
-    // TODO: Work on 'GDPApplication' Class
+    // TODO: Create window with three textfields and a dropdown window displaying selectable year values.
 
 }

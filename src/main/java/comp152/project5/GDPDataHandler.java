@@ -13,6 +13,13 @@ package comp152.project5;
 // 'GDPDataHandler' Class:
 public class GDPDataHandler {
 
-    // TODO: Work on 'GDPDataHandler' Class
+    // TODO: Create DataType Class to initialize variables from GDP ('date', 'countryiso3code', and 'value')
+    // TODO: 'Year' TextField value will represent 'date' value from GDP
+    // TODO: 'CountryName' TextField value will represent 'countryiso3code' value from GDP and then convert this value to the country's name.
+    // TODO: 'GDPData' TextField value will represent 'value' value from GDP
+
+    // TODO: Create DataType class to "getData" from GDP site
+
+    // TODO: Throw/catch possible exceptions and type print errors
 
 }

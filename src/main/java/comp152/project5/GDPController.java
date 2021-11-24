@@ -29,6 +29,4 @@ public class GDPController {
     @FXML
     private TextField GDPData;
 
-    // TODO: Continue Work on 'GDPController' Class:
-
 }
