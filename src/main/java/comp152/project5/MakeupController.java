@@ -58,11 +58,11 @@ public class MakeupController {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadData();
-        ListControl.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<DataHandler.UniversityDataType>() {
+        ListControl.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<DataHandler.MakeupDataType>() {
             @Override
-            public void changed(ObservableValue<? extends DataHandler.UniversityDataType> observable, DataHandler.UniversityDataType oldValue, DataHandler.UniversityDataType newValue) {
+            public void changed(ObservableValue<? extends DataHandler.MakeupDataType> observable, DataHandler.MakeupDataType oldValue, DataHandler.MakeupDataType newValue) {
                 NameField.setText(newValue.name);
-                UniversityCountryField.setText(newValue.country);
+                MakeupField.setText(newValue.country);
                 websiteDisplayField.setText(newValue.web_pages.toString());
             }
         });
