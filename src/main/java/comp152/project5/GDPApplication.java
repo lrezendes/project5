@@ -7,7 +7,12 @@
  * Currently Due on December 12th, 2021 @ 11:59 P.M.
  */
 
+// Java Package:
 package comp152.project5;
 
+// 'GDPApplication' Class:
 public class GDPApplication {
+
+    // TODO: Work on 'GDPApplication' Class
+
 }
