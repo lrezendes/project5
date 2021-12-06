@@ -1,7 +1,6 @@
 package comp152.project5;
 
 import com.google.gson.Gson;
-import javafx.scene.control.TableRow;
 
 import java.io.IOException;
 import java.net.URI;
@@ -9,11 +8,11 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class DataHandlerPhoneNumbers {
+public class PhoneNumberDataHandler {
     private HttpClient dataGrabber;
     private String webLocation;
 
-    public DataHandlerPhoneNumbers(String webLocation){
+    public PhoneNumberDataHandler(String webLocation){
         dataGrabber=HttpClient.newHttpClient();
         this.webLocation=webLocation;
     }
@@ -42,6 +41,9 @@ public class DataHandlerPhoneNumbers {
     }
 
 
-    class PhoneNumberDataTypes{}
+    class PhoneNumberDataTypes{
+        String countryName;
+        String countryAbbreviation;
+    }
 }
 
