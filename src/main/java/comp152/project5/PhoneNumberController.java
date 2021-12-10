@@ -19,7 +19,7 @@ public class PhoneNumberController implements Initializable {
 
 
     @FXML
-    private ListView<> ListControl;
+    private ListView<HashMap> ListControl;
 
     private PhoneNumberDataHandler Model;
 
@@ -29,7 +29,7 @@ public class PhoneNumberController implements Initializable {
 
         Model=new PhoneNumberDataHandler(site);
         var countryList=Model.getPhoneData();
-        ObservableList<PhoneNumberDataHandler.PhoneNumberDataTypes> dataToShow=
+        ObservableList<HashMap> dataToShow=
                 FXCollections.observableArrayList(countryList);
         ListControl.setItems(dataToShow);
 
