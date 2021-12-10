@@ -4,24 +4,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp152.project5.FirstWindowApplication">
    <children>
       <VBox layoutX="23.0" layoutY="14.0" prefHeight="372.0" prefWidth="557.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="116.0" prefWidth="274.0" text="Open GDP Window">
+            <Button mnemonicParsing="false" prefHeight="116.0" prefWidth="303.0" text="Open GDP Window">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="119.0" prefWidth="276.0" text="Open Makeup Window">
+            <Button mnemonicParsing="false" prefHeight="119.0" prefWidth="303.0" text="Open Makeup Window">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="123.0" prefWidth="278.0" text="Open Phone Number Window">
+            <Button mnemonicParsing="false" prefHeight="123.0" prefWidth="304.0" text="Open Phone Number Window">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Button>
          </children>
