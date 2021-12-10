@@ -45,7 +45,7 @@ public class MakeupController implements Initializable {
     }
 
     private String getQueryParams() {
-        TextInputDialog inputGrabber = new TextInputDialog("Young");
+        TextInputDialog inputGrabber = new TextInputDialog("ColourPop");
         inputGrabber.setHeaderText("Gathering Information for query");
         inputGrabber.setContentText("What makeup product would you like to search for:");
         var name = inputGrabber.showAndWait();
