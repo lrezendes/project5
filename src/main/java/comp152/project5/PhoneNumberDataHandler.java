@@ -7,6 +7,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Map;
 
 public class PhoneNumberDataHandler {
     private HttpClient dataGrabber;
@@ -17,7 +18,7 @@ public class PhoneNumberDataHandler {
         this.webLocation=webLocation;
     }
 
-    public PhoneNumberDataTypes[] getPhoneData(){
+    public Map getPhoneData(){
         var httpBuilder= HttpRequest.newBuilder();
         var dataRequest=httpBuilder.uri(URI.create(webLocation)).build();
         HttpResponse<String> response=null;                                             //var isnt used bcuz you cannot assign a null value to var
@@ -36,14 +37,10 @@ public class PhoneNumberDataHandler {
         }
         var responseBody=response.body();
         var gsonInterpreter=new Gson();
-        var phoneData=gsonInterpreter.fromJson(responseBody, PhoneNumberDataTypes[].class);
+        var phoneData=gsonInterpreter.fromJson(responseBody, Map.class);
         return phoneData;
     }
 
 
-    class PhoneNumberDataTypes{
-        String countryName;
-        String countryAbbreviation;
-    }
 }
 

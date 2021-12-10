@@ -19,7 +19,7 @@ public class PhoneNumberController implements Initializable {
 
 
     @FXML
-    private ListView<PhoneNumberDataHandler.PhoneNumberDataTypes> ListControl;
+    private ListView<> ListControl;
 
     private PhoneNumberDataHandler Model;
 
@@ -33,6 +33,11 @@ public class PhoneNumberController implements Initializable {
                 FXCollections.observableArrayList(countryList);
         ListControl.setItems(dataToShow);
 
+
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
 
     }
 }
