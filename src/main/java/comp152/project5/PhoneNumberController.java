@@ -40,21 +40,10 @@ public class PhoneNumberController implements Initializable {
 
     }
 
+
     @FXML
-    public void openWindowPhoneNumber(ActionEvent event){
-        var secondLoc=new FXMLLoader(PhoneNumberApplication.class.getResource("PhoneNumber-View.fxml"));
-        Scene secondScene=null;
-        try{
-            secondScene=new Scene(secondLoc.load(),500,500);
-        }
-        catch (IOException e){
-            System.out.println("Error loading second window");
-            e.printStackTrace();
-        }
-        Stage secondWindow=new Stage();
-        secondWindow.setScene(secondScene);
-        secondWindow.setTitle("PhoneNumber API  Sam");
-        secondWindow.show();
+    public void closeWindowPhoneNumber(ActionEvent event){
+        System.exit(0);
     }
 
 
