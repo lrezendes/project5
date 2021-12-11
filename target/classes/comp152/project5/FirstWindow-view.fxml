@@ -10,6 +10,7 @@
             <Button mnemonicParsing="false" text="Button" />
             <Button mnemonicParsing="false" text="Button" />
             <Button mnemonicParsing="false" onAction="#openWindowPhoneNumber" text="Phone #" />
+            <Button mnemonicParsing="false" onAction="#closeFirstWindow" text="Exit" />
          </children>
       </VBox>
    </children>

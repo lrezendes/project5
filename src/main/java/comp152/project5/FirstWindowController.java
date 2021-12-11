@@ -31,4 +31,9 @@ public class FirstWindowController {
         secondWindow.show();
     }
 
+    @FXML
+    public void closeFirstWindow(ActionEvent event){
+        System.exit(0);
+    }
+
 }
