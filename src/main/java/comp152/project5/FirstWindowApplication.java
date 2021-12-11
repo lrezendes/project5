@@ -18,7 +18,7 @@ public class FirstWindowApplication extends Application {
         catch (IOException e){
             System.out.println("FXML file not found");
         }
-        stage.setTitle("Project 5 :)  Sam, Lauren and Maria");
+        stage.setTitle("Project 5  Sam, Lauren and Maria");
         stage.setScene(scene);
         stage.show();
     }

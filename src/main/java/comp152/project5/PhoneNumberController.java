@@ -2,6 +2,7 @@ package comp152.project5;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -34,6 +35,11 @@ public class PhoneNumberController implements Initializable {
         ListControl.setItems(dataToShow);
 
 
+    }
+
+    @FXML
+    public void openWindowPhoneNumber(ActionEvent event){
+        var secondWindow=new
     }
 
     @Override
