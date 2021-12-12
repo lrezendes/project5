@@ -51,6 +51,7 @@
                         </HBox>
                      </children>
                   </VBox>
+                  <Button layoutX="14.0" layoutY="341.0" mnemonicParsing="false" onAction="#closeWindowPhoneNumber" prefHeight="43.0" prefWidth="58.0" text="Exit" />
                </children>
             </AnchorPane>
         </items>
