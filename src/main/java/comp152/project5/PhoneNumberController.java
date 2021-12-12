@@ -16,7 +16,7 @@ public class PhoneNumberController implements Initializable {
 
 
     @FXML
-    private ListView<Map> ListControl;
+    private ListView<Map<String, String>> ListControl;
     @FXML
     private TextField NameField;
     @FXML
@@ -24,19 +24,18 @@ public class PhoneNumberController implements Initializable {
     @FXML
     private TextField PrefixField;
 
-    private PhoneNumberDataHandler Model;
+    private PhoneNumberDataHandler ModelNames;
+    private PhoneNumberDataHandler ModelPhone;
 
 
-    public void loadDataCountries(){
-        var site="http://country.io/names.json";
+    public void loadDataNames(){
+        var siteNames="http://country.io/names.json";
 
-        Model=new PhoneNumberDataHandler(site);
-        var countryList=Model.getPhoneData();
-        ObservableList<Map> dataToShow=
-                FXCollections.observableArrayList(countryList);
-        ListControl.setItems(dataToShow);
-
-
+        ModelNames=new PhoneNumberDataHandler(siteNames);
+        var NamesList=ModelNames.getPhoneDataNames();
+        ObservableList<Map<String, String>> dataToShowNames=
+                FXCollections.observableArrayList(NamesList);
+        ListControl.setItems(dataToShowNames);
     }
 
 
@@ -48,6 +47,5 @@ public class PhoneNumberController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 }
