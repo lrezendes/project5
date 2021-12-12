@@ -36,4 +36,22 @@ public class FirstWindowController {
         System.exit(0);
     }
 
+    @FXML
+    public void openMakeupWindow(ActionEvent event){
+        var makeupLoc = new FXMLLoader(MakeupApplication.class.getResource("Makeup-view.fxml"));
+        Scene makeupScene = null;
+        try {
+            makeupScene = new Scene(makeupLoc.load(), 900, 600);
+        } catch (IOException e) {
+            System.out.println("Couldn't load makeup window");
+            e.printStackTrace();
+        }
+        Stage makeupWindow = new Stage();
+        makeupWindow.setScene(makeupScene);
+        makeupWindow.setTitle("See - here is the makeup window");
+        makeupWindow.show();
+    }
+    @FXML
+    public void handleClose(ActionEvent event) {System.exit(0);}
+
 }
