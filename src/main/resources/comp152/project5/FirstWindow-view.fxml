@@ -8,7 +8,7 @@
    <children>
       <VBox layoutX="253.0" layoutY="2.0" prefHeight="392.0" prefWidth="348.0">
          <children>
-            <Button fx:id="handleOpenMakeupWindow" mnemonicParsing="false" text="Makeup" />
+            <Button mnemonicParsing="false" onAction="#openMakeupWindow" text="Makeup" />
             <Button mnemonicParsing="false" text="Button" />
             <Button mnemonicParsing="false" onAction="#openWindowPhoneNumber" text="Phone #" />
             <Button mnemonicParsing="false" onAction="#closeFirstWindow" text="Exit" />
