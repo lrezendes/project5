@@ -4,13 +4,18 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -70,4 +75,21 @@ public class MakeupController implements Initializable {
             }
         });
     }
+    @FXML
+    public void handleOpenMakeupWindow(ActionEvent event){
+        var makeupLoc = new FXMLLoader(MakeupApplication.class.getResource("Makeup-view.fxml"));
+        Scene makeupScene = null;
+        try {
+            makeupScene = new Scene(makeupLoc.load(), 900, 600);
+        } catch (IOException e) {
+            System.out.println("Couldn't load makeup window");
+            e.printStackTrace();
+        }
+        Stage makeupWindow = new Stage();
+        makeupWindow.setScene(makeupScene);
+        makeupWindow.setTitle("See - here is the makeup window");
+        makeupWindow.show();
+    }
+    @FXML
+    public void handleClose(ActionEvent event) {System.exit(0);}
 }
