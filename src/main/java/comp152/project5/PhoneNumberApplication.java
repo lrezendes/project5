@@ -7,18 +7,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class FirstWindowApplication extends Application {
+public class PhoneNumberApplication extends Application {
     @Override
-    public void start(Stage stage)throws IOException{
-        FXMLLoader fxmlLoader=new FXMLLoader(FirstWindowApplication.class.getResource("FirstWindow-view.fxml"));
+    public void start(Stage stage) throws IOException{
+        FXMLLoader fxmlLoader=new FXMLLoader(PhoneNumberApplication.class.getResource("PhoneNumber-View.fxml"));
         Scene scene=null;
         try{
             scene=new Scene(fxmlLoader.load(),500,500);
         }
         catch (IOException e){
-            System.out.println("FXML file not found");
+            System.out.println("Error loading phone number fxml file");
         }
-        stage.setTitle("Project 5  Sam, Lauren and Maria");
+        stage.setTitle("Phone Number Window  Sam");
         stage.setScene(scene);
         stage.show();
     }
