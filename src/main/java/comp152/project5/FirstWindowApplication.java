@@ -1,6 +1,8 @@
 package comp152.project5;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -22,4 +24,23 @@ public class FirstWindowApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
+@FXML
+public void handleOpenMakeupWindow(ActionEvent event){
+        var makeupLoc = new FXMLLoader(MakeupApplication.class.getResource("Makeup-view.fxml"));
+        Scene makeupScene = null;
+        try {
+            makeupScene = new Scene(makeupLoc.load(), 900, 600);
+        } catch (IOException e) {
+            System.out.println("Couldn't load makeup window");
+            e.printStackTrace();
+        }
+        Stage makeupWindow = new Stage();
+        makeupWindow.setScene(makeupScene);
+        makeupWindow.setTitle("See - here is the makeup window");
+        makeupWindow.show();
+        }
+        @FXML
+        public void handleClose(ActionEvent event) {System.exit(0);}
 }
+
