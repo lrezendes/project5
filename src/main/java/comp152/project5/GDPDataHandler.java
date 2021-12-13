@@ -23,8 +23,10 @@ import java.util.ArrayList;
 // Public 'GDPDataHandler' Class:
 public class GDPDataHandler {
 
-    // Check following:
-    private HttpClient dataGrabber;
+    // Creating Private 'GDPDataReceiver' Object:
+    private HttpClient GDPDataReceiver;
+
+    // Creating Private 'webLocation' Object:
     private String webLocation;
 
     // 'GDPDataType' Class:
@@ -33,47 +35,62 @@ public class GDPDataHandler {
         // 'countryiso3code' String Variable that Represents the GDP Data's Country Value (In the Form of an ISO 3166-1 alpha-3 Code) and Is Used to Initialize the 'CountryName' TextField Variable:
         String countryiso3code;
 
-        // Returning the 'countryiso3code' Value as a String:
+        // Creating 'toString' Method:
         @Override
         public String toString() {
+
+            // Returning the 'countryiso3code' Value as a String:
             return countryiso3code;
+
         }
 
         // 'value' Int Variable that Represents the GDP Data's GDP Value and Is Used to Initialize the 'GDPData' TextField Variable:
         int value;
 
-        // Returning the (GDP) 'value' as an Int:
+        // Creating 'toInt' Method:
         @Override
         public int toInt() {
+
+            // Returning the (GDP) 'value' as an Integer:
             return value;
+
         }
 
         // 'date' Int Variable that Represents the GDP Data's GDP Year Value and Is Used to Initialize the 'Year' TextField Variable:
         int date;
 
-        // Returning the 'date' Value as an Int:
+        // Creating 'toInt' Method:
         @Override
         public int toInt() {
+
+            // Returning the 'date' Value as an Integer:
             return date;
+
         }
 
     }
 
-    /** The Following Code in Under Construction and In Need of Comments and Rename: */
+    // Public 'GDPDataHandler' Class with 'webLocation' Parameter(s):
     public GDPDataHandler(String webLocation){
-        dataGrabber = HttpClient.newHttpClient();
-        // This web location is the location we're passing in:
+
+        // Creating 'dataGrabber' Object:
+        GDPDataReceiver = HttpClient.newHttpClient();
+
+        // Initializing This Web Location as the Web Location:
         this.webLocation = webLocation;
     }
 
+    // Public 'getData' Method:
     public GDPDataType[] getData() {
+
+        /** The Following Code in Under Construction and In Need of Comments and Rename: */
         var httpbuilder = HttpRequest.newBuilder();
 
         // Creates Request Object:
         var dataRequest = httpbuilder.uri(URI.create(webLocation)).build();
         HttpResponse<String> response = null;
         try{
-            response = dataGrabber.send(dataRequest, HttpResponse.BodyHandlers.ofString());
+            response = GDPDataReceiver.send(dataRequest, HttpResponse.BodyHandlers.ofString());
         }
         catch (IOException exception){
             System.out.println("Error with the network");
