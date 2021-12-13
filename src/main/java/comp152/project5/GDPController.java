@@ -11,6 +11,8 @@
 package comp152.project5;
 
 // Java Import Statement(s):
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -37,5 +39,30 @@ public class GDPController implements Initializable {
 
     // Private 'GDPModel' Variable to Represent the 'GDPDataHandler' Class's Data:
     private GDPDataHandler GDPModel;
+
+    // Public 'loadDataUSA' Method:
+    public void loadDataUSA() {
+
+        // Creating 'siteUSA' to Represent the URL Containing GDP Data from the USA:
+        var siteUSA = "http://api.worldbank.org/v2/countries/USA/indicators/NY.GDP.MKTP.CD?per_page=5000&format=json";
+
+        // Creating 'paramsUSA' to Obtain Possible Query Parameters for 'siteUSA':
+        var paramsUSA = getQueryParams();
+
+        // Creating 'queryUSA' to Gather URL Query by Adding 'siteUSA' and 'paramsUSA':
+        var queryUSA = siteUSA + paramsUSA;
+
+        GDPModel = new GDPDataHandler(queryUSA);
+
+        // Creating 'listDataUSA' to Use the 'GDPModel' to Obtain Data:
+        var listDataUSA = GDPModel.getData();
+
+        // Creating 'displayDataUSA' to Display 'listDataUSA' Value:
+        ObservableList<GDPDataHandler.GDPDataType> displayDataUSA = FXCollections.observableArrayList(listDataUSA);
+
+        // Using 'GDPListControl' to Add GDP Values (from GDPDataType) to 'displayDataUSA' Variable:
+        GDPListControl.setItems(displayDataUSA);
+
+    }
 
 }
