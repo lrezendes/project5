@@ -7,8 +7,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class PhoneNumberDataHandler {
     private HttpClient dataGrabber;
@@ -21,9 +21,13 @@ public class PhoneNumberDataHandler {
     public PhoneNumberDataHandler(String webLocation){
         dataGrabber=HttpClient.newHttpClient();
         this.webLocation=webLocation;
+        this.codePhone=codePhone;
+        this.prefixPhone=prefixPhone;
+        this.codeNames=codeNames;
+        this.countryNames=countryNames;
     }
 
-    public HashMap <String, String>getPhoneDataNames(){
+    public HashMap<String,String> getPhoneDataNames(){
         var httpBuilder= HttpRequest.newBuilder();
         var dataRequest=httpBuilder.uri(URI.create(webLocation)).build();
         HttpResponse<String> response=null;                                             //var isnt used bcuz you cannot assign a null value to var
@@ -42,8 +46,25 @@ public class PhoneNumberDataHandler {
         }
         var responseBody=response.body();
         var gsonInterpreter=new Gson();
-        var phoneDataNames=gsonInterpreter.fromJson(responseBody, HashMap.class);
+
+        HashMap<String,String> phoneDataNames=gsonInterpreter.fromJson(responseBody, HashMap.class);
         return phoneDataNames;
+
+//        var codeSet=phoneDataNames.keySet();
+//        ArrayList<String> listOfKeys=new ArrayList<String>(codeSet);
+//
+//        var countrySet=phoneDataNames.values();
+//        ArrayList<String> listOfValues=new ArrayList<String>(countrySet);
+
+//
+//
+//
+//        for (var code:codeSet){
+//            PhoneNumberDataHandler namesObject = new PhoneNumberDataHandler(String, codeNames);
+//        }
+
+
+
     }
     public HashMap<String, String> getPhoneDataPhone(){
         var httpBuilder=HttpRequest.newBuilder();
@@ -64,7 +85,7 @@ public class PhoneNumberDataHandler {
         }
         var responceBody=response.body();
         var gsonInterpreter=new Gson();
-        var phoneDataPhone=gsonInterpreter.fromJson(responceBody, HashMap.class);
+        HashMap<String,String> phoneDataPhone=gsonInterpreter.fromJson(responceBody, HashMap.class);
         return phoneDataPhone;
 
     }

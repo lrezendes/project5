@@ -9,9 +9,9 @@
       <SplitPane dividerPositions="0.29797979797979796" layoutX="-4.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="367.0">
                <children>
-                  <ListView layoutX="-173.0" prefHeight="400.0" prefWidth="166.0" />
+                  <ListView fx:id="listControlNames" layoutX="-173.0" prefHeight="400.0" prefWidth="165.0" />
                   <VBox layoutX="109.0" layoutY="-2.0" prefHeight="299.0" prefWidth="309.0">
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0">
@@ -23,7 +23,7 @@
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField prefHeight="62.0" prefWidth="173.0" />
+                                    <TextField fx:id="NameField" prefHeight="62.0" prefWidth="173.0" />
                                  </children>
                               </HBox>
                            </children></HBox>
@@ -36,7 +36,7 @@
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <TextField prefHeight="64.0" prefWidth="177.0" />
+                                    <TextField fx:id="CodeField" prefHeight="64.0" prefWidth="177.0" />
                                  </children>
                               </HBox>
                            </children></HBox>
@@ -46,7 +46,7 @@
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font></Label>
-                              <TextField prefHeight="61.0" prefWidth="178.0" />
+                              <TextField fx:id="PrefixField" prefHeight="61.0" prefWidth="178.0" />
                            </children>
                         </HBox>
                      </children>

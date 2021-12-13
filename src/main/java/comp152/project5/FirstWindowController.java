@@ -22,7 +22,7 @@ public class FirstWindowController {
             secondScene=new Scene(secondLoc.load(),500,500);
         }
         catch (IOException e){
-            System.out.println("Error loading second window");
+            System.out.println("Error loading Phone Number window");
             e.printStackTrace();
         }
         Stage secondWindow=new Stage();

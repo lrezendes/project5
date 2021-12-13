@@ -1,5 +1,7 @@
 package comp152.project5;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,14 +11,16 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
-import java.util.Map;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class PhoneNumberController implements Initializable {
 
 
     @FXML
-    private ListView<Map<String, String>> ListControl;
+    private ListView<HashMap<String, String>> listControlNames;
+    @FXML
+    private ListView<HashMap<String, String>> listControlPhone;
     @FXML
     private TextField NameField;
     @FXML
@@ -33,9 +37,19 @@ public class PhoneNumberController implements Initializable {
 
         ModelNames=new PhoneNumberDataHandler(siteNames);
         var NamesList=ModelNames.getPhoneDataNames();
-        ObservableList<Map<String, String>> dataToShowNames=
+        ObservableList<HashMap<String, String>> dataToShowNames=
                 FXCollections.observableArrayList(NamesList);
-        ListControl.setItems(dataToShowNames);
+        listControlNames.setItems(dataToShowNames);
+    }
+
+    public void loadDataPhone(){
+        var sitePhone="http://country.io/phone.json";
+
+        ModelPhone=new PhoneNumberDataHandler(sitePhone);
+        var PhoneList=ModelPhone.getPhoneDataPhone();
+        ObservableList<HashMap<String,String>> dataToShowPhone=
+                FXCollections.observableArrayList(PhoneList);
+        listControlPhone.setItems(dataToShowPhone);
     }
 
 
