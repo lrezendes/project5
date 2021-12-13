@@ -15,26 +15,26 @@ public class FirstWindowController {
     private Label welcomeText;
 
     @FXML
-    public void openWindowPhoneNumber(ActionEvent event){
-        var secondLoc=new FXMLLoader(PhoneNumberApplication.class.getResource("PhoneNumber-View.fxml"));
+    public void openWindowPhoneNumber(ActionEvent event){  //method to open sams window with button, assigned to button
+        var secondLoc=new FXMLLoader(PhoneNumberApplication.class.getResource("PhoneNumber-View.fxml"));  //loads fxml file into window
         Scene secondScene=null;
         try{
-            secondScene=new Scene(secondLoc.load(),500,500);
+            secondScene=new Scene(secondLoc.load(),500,500); //creates scene variable with set height and width
         }
         catch (IOException e){
-            System.out.println("Error loading Phone Number window");
+            System.out.println("Error loading Phone Number window");  //exception for if the window doesnt load
             e.printStackTrace();
         }
-        Stage secondWindow=new Stage();
-        secondWindow.setScene(secondScene);
-        secondWindow.setTitle("PhoneNumber API  Sam");
-        secondWindow.show();
+        Stage secondWindow=new Stage();  //creates new stage variable for second window
+        secondWindow.setScene(secondScene);  //sets scene for the second scene variable declared above
+        secondWindow.setTitle("PhoneNumber API  Sam");  //sets title for second window
+        secondWindow.show();                            //shows second window
     }
 
     @FXML
     public void closeFirstWindow(ActionEvent event){
         System.exit(0);
-    }
+    }  //closes the application with an exit button
 
     @FXML
     public void openMakeupWindow(ActionEvent event){
@@ -51,7 +51,5 @@ public class FirstWindowController {
         makeupWindow.setTitle("See - here is the makeup window");
         makeupWindow.show();
     }
-    @FXML
-    public void handleClose(ActionEvent event) {System.exit(0);}
 
 }
