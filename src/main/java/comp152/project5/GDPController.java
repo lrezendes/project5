@@ -139,13 +139,15 @@ public class GDPController implements Initializable {
         }
     }
 
-    /**
-     * The Following Code in Under Construction and In Need of Comments and Renaming:
-     */
+    // Public 'initializeGDPData' Method:
     @Override
     public void initializeGDPData(URL location, ResourceBundle resources) {
+
+        // Calling 'loadDataUSA' Method:
         loadDataUSA();
-        // Add addListener with changeListener field
+
+        // TODO Continue Commenting Here:
+
         GDPListControl.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<GDPDataHandler.GDPDataType>() {
             @Override
             public void changed(ObservableValue<? extends GDPDataHandler.GDPDataType> observable, GDPDataHandler.GDPDataType oldValue, GDPDataHandler.GDPDataType newValue) {

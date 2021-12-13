@@ -83,28 +83,26 @@ public class GDPDataHandler {
     // Public 'getData' Method:
     public GDPDataType[] getData() {
 
-        /** The Following Code in Under Construction and In Need of Comments and Rename: */
-        var httpbuilder = HttpRequest.newBuilder();
+        // TODO Continue Commenting Here:
 
-        // Creates Request Object:
+        var httpbuilder = HttpRequest.newBuilder();
         var dataRequest = httpbuilder.uri(URI.create(webLocation)).build();
         HttpResponse<String> response = null;
         try{
             response = GDPDataReceiver.send(dataRequest, HttpResponse.BodyHandlers.ofString());
         }
         catch (IOException exception){
-            System.out.println("Error with the network");
+            System.out.println("Network Error.");
         }
         catch (InterruptedException e){
-            System.out.println("Error completing data transfer");
+            System.out.println("Data Transferring Error.");
         }
         if(response == null){
-            System.out.println("Something went very wrong, quitting program");
+            System.out.println("Now Exiting the Program.");
             // Negative number represents error code:
             System.exit(-1);
         }
         var responseBody = response.body();
-        // creating new gson object:
         var jsonInterpreter = new Gson();
         var GDPData = jsonInterpreter.fromJson(responseBody,GDPDataType[].class);
         return GDPData;
