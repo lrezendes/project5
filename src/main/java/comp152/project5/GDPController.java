@@ -65,4 +65,29 @@ public class GDPController implements Initializable {
 
     }
 
+    // Public 'loadDataCHN' Method:
+    public void loadDataCHN() {
+
+        // Creating 'siteCHN' to Represent the URL Containing GDP Data from China:
+        var siteCHN = "http://api.worldbank.org/v2/countries/CHN/indicators/NY.GDP.MKTP.CD?per_page=5000&format=json";
+
+        // Creating 'paramsUSA' to Obtain Possible Query Parameters for 'siteUSA':
+        var paramsCHN = getQueryParams();
+
+        // Creating 'queryUSA' to Gather URL Query by Adding 'siteUSA' and 'paramsUSA':
+        var queryCHN = siteCHN + paramsCHN;
+
+        GDPModel = new GDPDataHandler(queryCHN);
+
+        // Creating 'listDataCHN' to Use the 'GDPModel' to Obtain Data:
+        var listDataCHN = GDPModel.getData();
+
+        // Creating 'displayDataCHN' to Display 'listDataCHN' Value:
+        ObservableList<GDPDataHandler.GDPDataType> displayDataCHN = FXCollections.observableArrayList(listDataCHN);
+
+        // Using 'GDPListControl' to Add GDP Values (from GDPDataType) to 'displayDataCHN' Variable:
+        GDPListControl.setItems(displayDataCHN);
+
+    }
+
 }
