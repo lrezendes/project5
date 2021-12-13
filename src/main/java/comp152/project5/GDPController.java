@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
 
 // Public 'GDPController' Class that Implements Initializable:
 public class GDPController implements Initializable {
@@ -113,6 +114,19 @@ public class GDPController implements Initializable {
         // Using 'GDPListControl' to Add GDP Values (from GDPDataType) to 'displayDataIND' Variable:
         GDPListControl.setItems(displayDataIND);
 
+    }
+
+    private String getQueryParams() {
+        TextInputDialog yearInput = new TextInputDialog("Click Here to Select Year");
+        yearInput.setHeaderText("Gathering Information...");
+        yearInput.setContentText("Please Select Which Year to View GDP Data:");
+        var name = yearInput.showAndWait();
+        if (name.isPresent()){
+            return name.get();
+        }
+        else {
+            return "";
+        }
     }
 
 }
