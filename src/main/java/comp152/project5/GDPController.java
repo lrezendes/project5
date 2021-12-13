@@ -90,4 +90,29 @@ public class GDPController implements Initializable {
 
     }
 
+    // Public 'loadDataIND' Method:
+    public void loadDataIND() {
+
+        // Creating 'siteIND' to Represent the URL Containing GDP Data from India:
+        var siteIND = "http://api.worldbank.org/v2/countries/IND/indicators/NY.GDP.MKTP.CD?per_page=5000&format=json";
+
+        // Creating 'paramsUSA' to Obtain Possible Query Parameters for 'siteUSA':
+        var paramsIND = getQueryParams();
+
+        // Creating 'queryUSA' to Gather URL Query by Adding 'siteUSA' and 'paramsUSA':
+        var queryIND = siteIND + paramsIND;
+
+        GDPModel = new GDPDataHandler(queryIND);
+
+        // Creating 'listDataIND' to Use the 'GDPModel' to Obtain Data:
+        var listDataIND = GDPModel.getData();
+
+        // Creating 'displayDataIND' to Display 'listDataIND' Value:
+        ObservableList<GDPDataHandler.GDPDataType> displayDataIND = FXCollections.observableArrayList(listDataIND);
+
+        // Using 'GDPListControl' to Add GDP Values (from GDPDataType) to 'displayDataIND' Variable:
+        GDPListControl.setItems(displayDataIND);
+
+    }
+
 }
