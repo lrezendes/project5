@@ -4,7 +4,7 @@
  * Dr. John F. Santore
  * Fall 2021
  * Project 5
- * Currently Due on December 12th, 2021 @ 11:59 P.M.
+ * Due on December 12th, 2021 @ 11:59 P.M.
  */
 
 // Java Package:
@@ -31,7 +31,7 @@ public class GDPApplication extends Application {
     // Creating 'scene' Object:
     Scene scene = null;
 
-    // Initializing a Try and Catch Loop:
+    // Initializing a Try Loop:
     try {
 
         // Using 'scene' Object to Set Display Window Dimensions:
@@ -39,7 +39,7 @@ public class GDPApplication extends Application {
 
     }
 
-    // Catching IOException (If Available):
+    // Catching IOException (If Found):
     catch(IOException sceneIOException) {
 
         // Printing "Error Loading FXML File" Message:

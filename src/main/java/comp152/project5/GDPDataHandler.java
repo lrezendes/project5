@@ -4,7 +4,7 @@
  * Dr. John F. Santore
  * Fall 2021
  * Project 5
- * Currently Due on December 12th, 2021 @ 11:59 P.M.
+ * Due on December 12th, 2021 @ 11:59 P.M.
  */
 
 // Java Package:
@@ -83,27 +83,50 @@ public class GDPDataHandler {
     // Public 'getData' Method:
     public GDPDataType[] getData() {
 
-        // TODO Continue Commenting Here:
+        // TODO: Continue Commenting Code for 'getData' Method
 
         var httpbuilder = HttpRequest.newBuilder();
         var dataRequest = httpbuilder.uri(URI.create(webLocation)).build();
         HttpResponse<String> response = null;
+
+        // Initializing a Try Loop:
         try{
             response = GDPDataReceiver.send(dataRequest, HttpResponse.BodyHandlers.ofString());
         }
-        catch (IOException exception){
+
+        // Catching IOException (If Found):
+        catch (IOException getDataIOException){
+
+            // Printing "Network Error" Message:
             System.out.println("Network Error.");
+
         }
-        catch (InterruptedException e){
+
+        // Catching IOException (If Found):
+        catch (InterruptedException getDataInterruptedException){
+
+            // Printing "Data Transferring Error" Message:
             System.out.println("Data Transferring Error.");
+
         }
+
+        // Initializing If Loop:
         if(response == null){
+
+            // Printing "Exiting" Message
             System.out.println("Now Exiting the Program.");
-            // Negative number represents error code:
+
+            // If The Status Equals a Negative Number, Then An Error Code Appeared and the Program Will Be Exited:
             System.exit(-1);
+
         }
+
+        // Creating 'responseBody' Variable to Represent the 'response':
         var responseBody = response.body();
+
+        // Creating New Gson Object Known as 'jsonInterpreter':
         var jsonInterpreter = new Gson();
+
         var GDPData = jsonInterpreter.fromJson(responseBody,GDPDataType[].class);
         return GDPData;
     }

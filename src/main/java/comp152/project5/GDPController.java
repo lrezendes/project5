@@ -4,7 +4,7 @@
  * Dr. John F. Santore
  * Fall 2021
  * Project 5
- * Currently Due on December 12th, 2021 @ 11:59 P.M.
+ * Due on December 12th, 2021 @ 11:59 P.M.
  */
 
 // Java Package:
@@ -52,6 +52,7 @@ public class GDPController implements Initializable {
     private GDPDataHandler GDPModel;
 
     // Public 'loadDataUSA' Method:
+    /** This Method Will Gather Data From the GDP Site to Be Used for the USA TextField on the 'GDPView.fxml' File: */
     public void loadDataUSA() {
 
         // Creating 'siteUSA' to Represent the URL Containing GDP Data from the USA:
@@ -63,6 +64,7 @@ public class GDPController implements Initializable {
         // Creating 'queryUSA' to Gather URL Query by Adding 'siteUSA' and 'paramsUSA':
         var queryUSA = siteUSA + paramsUSA;
 
+        // Creating New 'GDPDataHandler' Object Called 'GDPModel' Using 'queryUSA':
         GDPModel = new GDPDataHandler(queryUSA);
 
         // Creating 'listDataUSA' to Use the 'GDPModel' to Obtain Data:
@@ -77,6 +79,7 @@ public class GDPController implements Initializable {
     }
 
     // Public 'loadDataCHN' Method:
+    /** This Method Will Gather Data From the GDP Site to Be Used for the CHN TextField on the 'GDPView.fxml' File: */
     public void loadDataCHN() {
 
         // Creating 'siteCHN' to Represent the URL Containing GDP Data from China:
@@ -85,9 +88,10 @@ public class GDPController implements Initializable {
         // Creating 'paramsCHN' to Obtain Query Parameters from 'siteCHN':
         var paramsCHN = getYearQueryParams();
 
-        // Creating 'queryCHN' to Gather URL Query by Adding 'siteUSA' and 'paramsUSA':
+        // Creating 'queryCHN' to Gather URL Query by Adding 'siteCHN' and 'paramsCHN':
         var queryCHN = siteCHN + paramsCHN;
 
+        // Creating New 'GDPDataHandler' Object Called 'GDPModel' Using 'queryCHN':
         GDPModel = new GDPDataHandler(queryCHN);
 
         // Creating 'listDataCHN' to Use the 'GDPModel' to Obtain Data:
@@ -102,6 +106,7 @@ public class GDPController implements Initializable {
     }
 
     // Public 'loadDataIND' Method:
+    /** This Method Will Gather Data From the GDP Site to Be Used for the IND TextField on the 'GDPView.fxml' File: */
     public void loadDataIND() {
 
         // Creating 'siteIND' to Represent the URL Containing GDP Data from India:
@@ -113,7 +118,7 @@ public class GDPController implements Initializable {
         // Creating 'queryIND' to Gather URL Query by Adding 'siteIND' and 'paramsIND':
         var queryIND = siteIND + paramsIND;
 
-
+        // Creating New 'GDPDataHandler' Object Called 'GDPModel' Using 'queryIND':
         GDPModel = new GDPDataHandler(queryIND);
 
         // Creating 'listDataIND' to Use the 'GDPModel' to Obtain Data:
@@ -128,26 +133,84 @@ public class GDPController implements Initializable {
     }
 
     // Private 'getYearQueryParams' Method:
+    /** This Method Includes Data That Will Be Displayed in the Year ScrollPane on the 'GDPView.fxml' File: */
     private String getYearQueryParams() {
+
+        // Printing Default 'Click Here to Select Year' Message:
         TextInputDialog yearInput = new TextInputDialog("Click Here to Select Year");
+
+        // TODO: Continue Commenting Code for 'getYearQueryParams' Method
+
         yearInput.setHeaderText("Gathering Information...");
         yearInput.setContentText("Please Select Which Year to View GDP Data:");
         var name = yearInput.showAndWait();
         if (name.isPresent()) {
             return name.get();
-        } else {
+        }
+        else {
             return "";
         }
     }
 
-    // Public 'initializeGDPData' Method:
+    // Public 'initializeDataUSA' Method:
+    /** This Method Includes Data That Will Be Displayed in the USA TextField on the 'GDPView.fxml' File: */
     @Override
-    public void initializeGDPData(URL location, ResourceBundle resources) {
+    public void initializeDataUSA(URL location, ResourceBundle resources) {
 
-        // Calling 'loadDataUSA' Method:
+        // Calling 'loadDataUSA' Method to Load USA Data:
         loadDataUSA();
 
-        // TODO Continue Commenting Here:
+        GDPListControl.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<GDPDataHandler.GDPDataType>() {
+            @Override
+            public void changed(ObservableValue<? extends GDPDataHandler.GDPDataType> observable, GDPDataHandler.GDPDataType oldValue, GDPDataHandler.GDPDataType newValue) {
+
+                // Initializing 'date' GDP Value to 'Year' NameField Variable:
+                Year.setText(newValue.date);
+
+                // Initializing 'countryiso3code' Value to 'CountryName' TextField Variable:
+                CountryName.setText(newValue.countryiso3code);
+
+                // Initializing 'value' to 'GDPData' TextField Variable:
+                GDPData.setText(newValue.value);
+
+            }
+        });
+
+    }
+
+    // Public 'initializeDataCHN' Method:
+    /** This Method Includes Data That Will Be Displayed in the CHN TextField on the 'GDPView.fxml' File: */
+    @Override
+    public void initializeDataCHN(URL location, ResourceBundle resources) {
+
+        // Calling 'loadDataCHN' Method to Load CHN Data:
+        loadDataCHN();
+
+        GDPListControl.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<GDPDataHandler.GDPDataType>() {
+            @Override
+            public void changed(ObservableValue<? extends GDPDataHandler.GDPDataType> observable, GDPDataHandler.GDPDataType oldValue, GDPDataHandler.GDPDataType newValue) {
+
+                // Initializing 'date' GDP Value to 'Year' NameField Variable:
+                Year.setText(newValue.date);
+
+                // Initializing 'countryiso3code' Value to 'CountryName' TextField Variable:
+                CountryName.setText(newValue.countryiso3code);
+
+                // Initializing 'value' to 'GDPData' TextField Variable:
+                GDPData.setText(newValue.value);
+
+            }
+        });
+
+    }
+
+    // Public 'initializeDataIND' Method:
+    /** This Method Includes Data That Will Be Displayed in the IND TextField on the 'GDPView.fxml' File: */
+    @Override
+    public void initializeDataIND(URL location, ResourceBundle resources) {
+
+        // Calling 'loadDataIND' Method to Load IND Data:
+        loadDataIND();
 
         GDPListControl.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<GDPDataHandler.GDPDataType>() {
             @Override

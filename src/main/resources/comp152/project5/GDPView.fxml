@@ -6,22 +6,21 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp152.project5.GDPController">
    <children>
       <Separator layoutX="370.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="9.0" />
-      <Label layoutX="36.0" layoutY="57.0" text="GDP 1" />
-      <TextField layoutX="98.0" layoutY="50.0" />
+      <Label layoutX="36.0" layoutY="57.0" text="USA" />
+      <TextField layoutX="98.0" layoutY="50.0" onAction="#loadDataUSA" />
       <Separator layoutX="1.0" layoutY="123.0" prefHeight="5.0" prefWidth="372.0" />
-      <Label layoutX="32.0" layoutY="177.0" text="GDP 2" />
-      <TextField layoutX="96.0" layoutY="173.0" />
+      <Label layoutX="32.0" layoutY="177.0" text="CHINA" />
+      <TextField layoutX="96.0" layoutY="173.0" onAction="#loadDataCHN" />
       <Separator layoutX="-8.0" layoutY="264.0" prefHeight="2.0" prefWidth="375.0" />
-      <Label layoutX="32.0" layoutY="313.0" text="GDP 3" />
-      <TextField layoutX="95.0" layoutY="308.0" />
+      <Label layoutX="32.0" layoutY="313.0" text="INDIA" />
+      <TextField layoutX="95.0" layoutY="308.0" onAction="#loadDataIND" />
       <Label layoutX="454.0" layoutY="14.0" text="Select Year" />
       <ScrollPane layoutX="372.0" layoutY="41.0" prefHeight="359.0" prefWidth="227.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="358.0" prefWidth="225.0" />
+          <AnchorPane fx:id="Year" minHeight="0.0" minWidth="0.0" prefHeight="358.0" prefWidth="225.0" />
         </content>
       </ScrollPane>
    </children>
