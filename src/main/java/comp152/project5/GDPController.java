@@ -126,6 +126,7 @@ public class GDPController implements Initializable {
 
     }
 
+    // Private 'getQueryParams' Method:
     private String getQueryParams() {
         TextInputDialog yearInput = new TextInputDialog("Click Here to Select Year");
         yearInput.setHeaderText("Gathering Information...");
@@ -147,13 +148,13 @@ public class GDPController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends GDPDataHandler.GDPDataType> observable, GDPDataHandler.GDPDataType oldValue, GDPDataHandler.GDPDataType newValue) {
 
-                // Initializing 'Year' NameField Variable to 'date' GDP Value:
+                // Initializing 'date' GDP Value to 'Year' NameField Variable:
                 Year.setText(newValue.date);
 
-                // Initializing 'CountryName' TextField Variable to 'countryiso3code' Value:
+                // Initializing 'countryiso3code' Value to 'CountryName' TextField Variable:
                 CountryName.setText(newValue.countryiso3code);
 
-                // Initializing 'GDPData' TextField Variable to 'value':
+                // Initializing 'value' to 'GDPData' TextField Variable:
                 GDPData.setText(newValue.value);
 
             }

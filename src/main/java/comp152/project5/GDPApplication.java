@@ -10,9 +10,44 @@
 // Java Package:
 package comp152.project5;
 
-// 'GDPApplication' Class:
-public class GDPApplication {
+// Java Import Statements:
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-    // TODO: Create window with three textfields and a dropdown window displaying selectable year values.
+import java.io.IOException;
 
+// Public 'GDPApplication' Class:
+public class GDPApplication extends Application {
+
+    // TODO: Figure out where to create window with three textfields and a dropdown window displaying selectable year values.
+
+    // Public 'start' Method with 'stage' Parameter(s):
+    @Override
+    public void start(Stage stage) {
+
+    // Initializing 'GDPView.fxml' to 'GDPViewWindow' Variable:
+    FXMLLoader GDPViewWindow = new FXMLLoader(GDPApplication.class.getResource("GDPView.fxml"));
+
+    // Creating 'scene' Object:
+    Scene scene = null;
+
+    // Initializing a Try and Catch Loop:
+    try {
+
+        // Using 'scene' Object to Set Display Window Dimensions:
+        scene = new Scene(GDPViewWindow.load(), 700, 700);
+
+    }
+    catch(IOException sceneIOException) {
+
+        // Printing "Error Loading FXML File" Message:
+        System.out.println("There Was an Error Loading the FXML File.");
+
+    }
+
+    // Continue Code Here.
+
+    }
 }
