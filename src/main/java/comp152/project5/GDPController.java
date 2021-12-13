@@ -12,21 +12,30 @@ package comp152.project5;
 
 // Java Import Statement(s):
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-// 'GDPController' Class:
-public class GDPController {
+// Public 'GDPController' Class that Implements Initializable:
+public class GDPController implements Initializable {
 
-    // 'Year' Variable to Represent the GDP Data's Year:
+    // Private 'Year' TextField Variable to Represent the GDP Data's 'date' Value:
     @FXML
     private TextField Year;
 
-    // 'CountryName' Variable to Represent the GDP Data's Country:
+    // Private 'CountryName' TextField Variable to Represent the GDP Data's 'countryiso3code' Value:
     @FXML
     private TextField CountryName;
 
-    // 'GDPData' Variable to Represent the GDP Data (This Value May Be Updated/Edited by the User):
+    // Private 'GDPData' TextField Variable to Represent the GDP Data's 'value':
     @FXML
     private TextField GDPData;
+
+    // Private 'List Control' ListView Variable to Represent GDP Values (Such as 'year', 'countryiso3code', and 'value' Values):
+    @FXML
+    private ListView<GDPDataHandler.GDPDataType> GDPListControl;
+
+    // Private 'GDPModel' Variable to Represent the 'GDPDataHandler' Class's Data:
+    private GDPDataHandler GDPModel;
 
 }
