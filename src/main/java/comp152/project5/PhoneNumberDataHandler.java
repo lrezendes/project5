@@ -28,26 +28,26 @@ public class PhoneNumberDataHandler {
     }
 
     public HashMap<String,String> getPhoneDataNames(){
-        var httpBuilder= HttpRequest.newBuilder();
-        var dataRequest=httpBuilder.uri(URI.create(webLocation)).build();
-        HttpResponse<String> response=null;                                             //var isnt used bcuz you cannot assign a null value to var
+        var httpBuilder= HttpRequest.newBuilder();  //creates new Httprequest builder
+        var dataRequest=httpBuilder.uri(URI.create(webLocation)).build();  //crates new httprequest
+        HttpResponse<String> response=null;              //creates a string of Httpresponce          //var isnt used bcuz you cannot assign a null value to var
         try {
             response=dataGrabber.send(dataRequest, HttpResponse.BodyHandlers.ofString()); //treats the bit of data returned as string
         }
         catch (IOException exception) {
-            System.out.println("Error in network");
+            System.out.println("Error in network");  //error with connection
         }
         catch (InterruptedException e) {
-            System.out.println("Error in data transfer");
+            System.out.println("Error in data transfer");  //error with data transfer
         }
         if (response==null){
             System.out.println("HttpResponse response is null, exiting");
             System.exit(-1);
         }
-        var responseBody=response.body();
-        var gsonInterpreter=new Gson();
+        var responseBody=response.body();  //creates string variable of the responce body
+        var gsonInterpreter=new Gson();  //introduces new gson variable
 
-        HashMap<String,String> phoneDataNames=gsonInterpreter.fromJson(responseBody, HashMap.class);
+        HashMap<String,String> phoneDataNames=gsonInterpreter.fromJson(responseBody, HashMap.class);  //creates a hashmap from the gson interpreter introduced above
         return phoneDataNames;
 
 //        var codeSet=phoneDataNames.keySet();
@@ -66,7 +66,7 @@ public class PhoneNumberDataHandler {
 
 
     }
-    public HashMap<String, String> getPhoneDataPhone(){
+    public HashMap<String, String> getPhoneDataPhone(){  //same as above but for the other api
         var httpBuilder=HttpRequest.newBuilder();
         var dataRequest=httpBuilder.uri(URI.create(webLocation)).build();
         HttpResponse<String>response=null;
