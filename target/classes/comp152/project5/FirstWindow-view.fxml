@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp152.project5.FirstWindowController">
+   <children>
+      <VBox layoutX="253.0" layoutY="2.0" prefHeight="392.0" prefWidth="348.0">
+         <children>
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" onAction="#openWindowPhoneNumber" text="Phone #" />
+            <Button mnemonicParsing="false" onAction="#closeFirstWindow" text="Exit" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
