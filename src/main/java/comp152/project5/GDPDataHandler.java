@@ -10,6 +10,9 @@
 // Java Package:
 import com.google.gson.Gson;
 
+// Java Import Statements:
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -24,29 +27,36 @@ public class GDPDataHandler {
     private HttpClient dataGrabber;
     private String webLocation;
 
+    // 'GDPDataType' Class:
     class GDPDataType {
 
-        // 'countryiso3code' that
+        // 'countryiso3code' String Variable that Represents the GDP Data's Country Value (In the Form of an ISO 3166-1 alpha-3 Code) and Is Used to Initialize the 'CountryName' TextField Variable:
         String countryiso3code;
 
+        // Returning the 'countryiso3code' Value as a String:
         @Override
         public String toString() {
             return countryiso3code;
         }
 
+        // 'value' Int Variable that Represents the GDP Data's GDP Value and Is Used to Initialize the 'GDPData' TextField Variable:
         int value;
 
+        // Returning the (GDP) 'value' as an Int:
         @Override
         public int toInt() {
             return value;
         }
 
+        // 'date' Int Variable that Represents the GDP Data's GDP Year Value and Is Used to Initialize the 'Year' TextField Variable:
         int date;
 
+        // Returning the 'date' Value as an Int:
         @Override
         public int toInt() {
             return date;
         }
+
     }
 
     public GDPDataHandler(String webLocation){
