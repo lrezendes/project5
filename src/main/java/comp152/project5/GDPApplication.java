@@ -21,8 +21,6 @@ import java.io.IOException;
 // Public 'GDPApplication' Class:
 public class GDPApplication extends Application {
 
-    // TODO: Figure out where to create window with three textfields and a dropdown window displaying selectable year values.
-
     // Public 'start' Method with 'stage' Parameter(s):
     @Override
     public void start(Stage stage) {

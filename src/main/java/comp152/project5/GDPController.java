@@ -57,8 +57,8 @@ public class GDPController implements Initializable {
         // Creating 'siteUSA' to Represent the URL Containing GDP Data from the USA:
         var siteUSA = "http://api.worldbank.org/v2/countries/USA/indicators/NY.GDP.MKTP.CD?per_page=5000&format=json";
 
-        // Creating 'paramsUSA' to Obtain Possible Query Parameters for 'siteUSA':
-        var paramsUSA = getQueryParams();
+        // Creating 'paramsUSA' to Obtain Query Parameters from 'siteUSA':
+        var paramsUSA = getYearQueryParams();
 
         // Creating 'queryUSA' to Gather URL Query by Adding 'siteUSA' and 'paramsUSA':
         var queryUSA = siteUSA + paramsUSA;
@@ -82,10 +82,10 @@ public class GDPController implements Initializable {
         // Creating 'siteCHN' to Represent the URL Containing GDP Data from China:
         var siteCHN = "http://api.worldbank.org/v2/countries/CHN/indicators/NY.GDP.MKTP.CD?per_page=5000&format=json";
 
-        // Creating 'paramsUSA' to Obtain Possible Query Parameters for 'siteUSA':
-        var paramsCHN = getQueryParams();
+        // Creating 'paramsCHN' to Obtain Query Parameters from 'siteCHN':
+        var paramsCHN = getYearQueryParams();
 
-        // Creating 'queryUSA' to Gather URL Query by Adding 'siteUSA' and 'paramsUSA':
+        // Creating 'queryCHN' to Gather URL Query by Adding 'siteUSA' and 'paramsUSA':
         var queryCHN = siteCHN + paramsCHN;
 
         GDPModel = new GDPDataHandler(queryCHN);
@@ -107,11 +107,12 @@ public class GDPController implements Initializable {
         // Creating 'siteIND' to Represent the URL Containing GDP Data from India:
         var siteIND = "http://api.worldbank.org/v2/countries/IND/indicators/NY.GDP.MKTP.CD?per_page=5000&format=json";
 
-        // Creating 'paramsUSA' to Obtain Possible Query Parameters for 'siteUSA':
-        var paramsIND = getQueryParams();
+        // Creating 'paramsIND' to Obtain Query Parameters from 'siteIND':
+        var paramsIND = getYearQueryParams();
 
-        // Creating 'queryUSA' to Gather URL Query by Adding 'siteUSA' and 'paramsUSA':
+        // Creating 'queryIND' to Gather URL Query by Adding 'siteIND' and 'paramsIND':
         var queryIND = siteIND + paramsIND;
+
 
         GDPModel = new GDPDataHandler(queryIND);
 
@@ -126,8 +127,8 @@ public class GDPController implements Initializable {
 
     }
 
-    // Private 'getQueryParams' Method:
-    private String getQueryParams() {
+    // Private 'getYearQueryParams' Method:
+    private String getYearQueryParams() {
         TextInputDialog yearInput = new TextInputDialog("Click Here to Select Year");
         yearInput.setHeaderText("Gathering Information...");
         yearInput.setContentText("Please Select Which Year to View GDP Data:");
