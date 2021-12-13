@@ -8,14 +8,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp152.project5.MakeupController">
    <children>
-      <SplitPane dividerPositions="0.3028052805280528, 0.31435643564356436" layoutX="-2.0" layoutY="-2.0" prefHeight="400.0" prefWidth="608.0">
+      <SplitPane dividerPositions="0.005775577557755775, 0.31435643564356436" layoutX="-2.0" layoutY="-2.0" prefHeight="400.0" prefWidth="608.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="261.0">
                <children>
-                  <ListView layoutY="-4.0" prefHeight="398.0" prefWidth="183.0" />
+                  <ListView fx:id="ListControl" layoutY="-4.0" prefHeight="398.0" prefWidth="183.0" />
                   <VBox layoutX="-1.0" prefHeight="398.0" prefWidth="183.0">
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0" />
