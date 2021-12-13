@@ -40,6 +40,8 @@ public class GDPApplication extends Application {
         scene = new Scene(GDPViewWindow.load(), 700, 700);
 
     }
+
+    // Catching IOException (If Available):
     catch(IOException sceneIOException) {
 
         // Printing "Error Loading FXML File" Message:
@@ -47,7 +49,12 @@ public class GDPApplication extends Application {
 
     }
 
-    // Continue Code Here.
+    // Setting Title Name:
+    stage.setTitle("GDP Information");
+
+    // Setting and Displaying the Scene:
+    stage.setScene(scene);
+    stage.show();
 
     }
 }
