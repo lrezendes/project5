@@ -131,10 +131,36 @@ public class GDPController implements Initializable {
         yearInput.setHeaderText("Gathering Information...");
         yearInput.setContentText("Please Select Which Year to View GDP Data:");
         var name = yearInput.showAndWait();
-        if (name.isPresent()){
+        if (name.isPresent()) {
             return name.get();
-        }
-        else {
+        } else {
             return "";
         }
+    }
+
+    /** The Following Code in Under Construction and In Need of Comments and Rename: */
+    @Override
+    public void initializeGDPData(URL location, ResourceBundle resources) {
+        loadDataUSA();
+        // Add addListener with changeListener field
+        GDPListControl.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<GDPDataHandler.GDPDataType>() {
+            @Override
+            public void changed(ObservableValue<? extends GDPDataHandler.GDPDataType> observable, GDPDataHandler.GDPDataType oldValue, GDPDataHandler.GDPDataType newValue) {
+
+                // Initializing 'Year' NameField Variable to 'date' GDP Value:
+                Year.setText(newValue.date);
+
+                // Initializing 'CountryName' TextField Variable to 'countryiso3code' Value:
+                CountryName.setText(newValue.countryiso3code);
+
+                // Initializing 'GDPData' TextField Variable to 'value':
+                GDPData.setText(newValue.value);
+
+            }
+        });
+
+        // TODO: Create DataType class to "getData" from GDP site
+
+        // TODO: Throw/catch possible exceptions and type print errors
+
     }
