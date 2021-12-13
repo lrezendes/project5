@@ -59,6 +59,7 @@ public class GDPDataHandler {
 
     }
 
+    /** The Following Code in Under Construction and In Need of Comments and Rename: */
     public GDPDataHandler(String webLocation){
         dataGrabber = HttpClient.newHttpClient();
         // This web location is the location we're passing in:
