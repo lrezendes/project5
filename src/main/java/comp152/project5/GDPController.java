@@ -139,7 +139,9 @@ public class GDPController implements Initializable {
         }
     }
 
-    /** The Following Code in Under Construction and In Need of Comments and Rename: */
+    /**
+     * The Following Code in Under Construction and In Need of Comments and Renaming:
+     */
     @Override
     public void initializeGDPData(URL location, ResourceBundle resources) {
         loadDataUSA();
@@ -160,8 +162,5 @@ public class GDPController implements Initializable {
             }
         });
 
-        // TODO: Create DataType class to "getData" from GDP site
-
-        // TODO: Throw/catch possible exceptions and type print errors
-
     }
+}
