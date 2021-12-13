@@ -10,16 +10,36 @@
 // Java Package:
 package comp152.project5;
 
-// 'GDPDataHandler' Class:
+import java.net.http.HttpClient;
+
+// Public 'GDPDataHandler' Class:
 public class GDPDataHandler {
 
-    // TODO: Create DataType Class to initialize variables from GDP ('date', 'countryiso3code', and 'value')
-    // TODO: 'Year' TextField value will represent 'date' value from GDP
-    // TODO: 'CountryName' TextField value will represent 'countryiso3code' value from GDP and then convert this value to the country's name.
-    // TODO: 'GDPData' TextField value will represent 'value' value from GDP
+    // Check following:
+    private HttpClient dataGrabber;
+    private String webLocation;
 
-    // TODO: Create DataType class to "getData" from GDP site
+    class GDPDataType {
 
-    // TODO: Throw/catch possible exceptions and type print errors
+        // 'countryiso3code' that
+        String countryiso3code;
 
-}
+        @Override
+        public String toString() {
+            return countryiso3code;
+        }
+
+        int value;
+
+        @Override
+        public int toInt() {
+            return value;
+        }
+
+        int date;
+
+        @Override
+        public int toInt() {
+            return date;
+        }
+    }
